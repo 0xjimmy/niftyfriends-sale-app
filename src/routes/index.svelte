@@ -63,7 +63,7 @@
 			</p>
 		{/if}
 	</div>
-	<div class="font-regular text-xl my-16 pb-20 flex flex-col gap-5">
+	<div class="font-regular text-xl my-16 pb-20 flex flex-col gap-5 md:w-full max-w-screen-md">
 		<p>
 			Meta Citizens consists of 10,000 NFTs, a mixture of both male and female genders, residing on
 			the Ethereum Blockchain. Each Citizen is Unique in Appearance and Personality. The purpose of
