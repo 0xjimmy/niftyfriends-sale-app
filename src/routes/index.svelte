@@ -11,10 +11,6 @@
 	class="flex flex-col p-10 md:p-20 w-screen h-screen items-center gap-5 font-mono text-white mb-10 "
 >
 	<img src={Logo} alt="MetaCitizens" class="w-3/4" />
-	<h1 class="text-5xl font-bold">Twitter / Discord /</h1>
-	<h2 class="text-2xl font-semibold">
-		Wallet Address: {$walletAddress ? $walletAddress : 'Not Connected'}
-	</h2>
 	<div class="flex flex-row flex-wrap max-w-90 items-center justify-center my-10">
 		<img
 			src={NFT1}
