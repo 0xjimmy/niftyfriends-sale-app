@@ -59,7 +59,7 @@ export const connectMetamask = () => new Promise((resolve, reject) => {
 export const connectWalletConnect = () => new Promise(async (resolve, reject) => {
   try {
     const providerInstance = new WalletConnectProvider({
-      infuraId: "27e484dcd9e3efcfd25a83a78777cdf1", // Required
+      infuraId: "a0282e6a8e604643aa4a4d93f5773367", // Required
     });
     const _provider = await providerInstance.enable();
     const walletConnectProvider = new ethers.providers.Web3Provider(providerInstance);
