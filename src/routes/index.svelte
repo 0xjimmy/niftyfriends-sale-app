@@ -1,10 +1,39 @@
 <script lang="ts">
-	import { connectMetamask, connectWalletConnect, walletAddress } from '$lib/stores/provider';
+	import { BigNumber, Contract } from 'ethers';
+	import {
+		connectMetamask,
+		connectWalletConnect,
+		walletAddress,
+		provider
+	} from '$lib/stores/provider';
+	import ABI from '$lib/nftabi.json';
 	import Logo from '$lib/assets/meta_citizens_logo_white.png';
 	import NFT1 from '$lib/assets/example1.png';
 	import NFT2 from '$lib/assets/example2.png';
 	import NFT3 from '$lib/assets/example3.png';
+	import { onMount } from 'svelte';
 	let buyAmount: number = 0;
+
+	let minted = '0';
+	let contract: Contract;
+
+	onMount(() => {
+		contract = new Contract('0x25Ca3D9871dd26683CE37275487Ee49309eeD9B2', ABI, $provider);
+		contract.totalSupply().then((result: BigNumber) => {
+			minted = result.toString();
+		});
+	});
+
+	const mint = () => {
+		const amount = Math.floor(Number(buyAmount));
+		contract = new Contract(
+			'0x25Ca3D9871dd26683CE37275487Ee49309eeD9B2',
+			ABI,
+			// @ts-ignore
+			$provider.getSigner()
+		);
+		contract.mint(BigNumber.from(amount));
+	};
 </script>
 
 <section
@@ -27,7 +56,7 @@
 		class="flex flex-col outline outline-4 outline-[#227694] p-3 rounded-2xl items-center gap-2 text-center"
 	>
 		<h2 class="text-2xl font-semibold">Mint Your Meta Citizen</h2>
-		<h3 class="text-xl font-medium">1 / 10,000 Minted</h3>
+		<h3 class="text-xl font-medium">{minted} / 10,000 Minted</h3>
 		<br />
 
 		{#if !$walletAddress}
@@ -51,7 +80,7 @@
 				/>
 				<button
 					disabled={buyAmount > 5}
-					on:click={connectWalletConnect}
+					on:click={mint}
 					class="p-3 rounded-2xl text-sm md:text-xl w-fit bg-slate-900 text-white font-semibold hover:scale-[1.05] transition transition-200"
 					>Mint</button
 				>
