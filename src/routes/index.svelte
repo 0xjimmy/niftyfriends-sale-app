@@ -96,7 +96,13 @@
 		<p>
 			Meta Citizens consists of 10,000 NFTs, a mixture of both male and female genders, residing on
 			the Ethereum Blockchain. Each Citizen is Unique in Appearance and Personality. The purpose of
-			Meta Citizens is to be a Free-to-Mint project with no gimmicks or promises of gain.
+			project is to be a community-driven be a Free-to-Mint project with no gimmicks. The
+			development and direction of the project is decided upon by its community members with
+			guidance from the original creator, <a
+				href="https://twitter.com/Metamantra"
+				target="_blank"
+				class="font-bold underline decoration-sky-500">@Metamantra</a
+			>.
 		</p>
 		<img
 			src={NFT2}
@@ -105,8 +111,8 @@
 		/>
 		<p>
 			Owners of a Meta Citizens NFT have full IP rights to the character(s) they own. As the artist
-			and creator of the project, I just that you do not engage in any malicious or illegal behavior
-			while utilizing the NFT as we would like to keep positive vibes around our community.
+			and creator of the project, I just ask that you do not engage in any malicious or illegal
+			behavior while utilizing the NFT as we would like to keep positive vibes around our community.
 		</p>
 		<p>
 			This is a community driven project. Any and all support to help grow the project would be much
