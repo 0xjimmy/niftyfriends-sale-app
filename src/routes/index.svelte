@@ -10,7 +10,7 @@
 <section
 	class="flex flex-col p-10 md:p-20 w-screen h-screen items-center gap-5 font-mono text-white mb-10 "
 >
-	<img src={Logo} alt="MetaCitizens" class="w-3/4" />
+	<img src={Logo} alt="MetaCitizens" class="w-3/4 max-w-md" />
 	<div class="flex flex-row flex-wrap max-w-90 items-center justify-center my-10">
 		<img
 			src={NFT1}
@@ -63,7 +63,7 @@
 			</p>
 		{/if}
 	</div>
-	<div class="prose md:prose-2xl">
+	<div class="font-regular text-xl my-16 pb-20 flex flex-col gap-5">
 		<p>
 			Meta Citizens consists of 10,000 NFTs, a mixture of both male and female genders, residing on
 			the Ethereum Blockchain. Each Citizen is Unique in Appearance and Personality. The purpose of
