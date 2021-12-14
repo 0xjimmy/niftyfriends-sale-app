@@ -7,7 +7,7 @@
 		provider
 	} from '$lib/stores/provider';
 	import ABI from '$lib/nftabi.json';
-	import Logo from '$lib/assets/meta_citizens_logo_white.png';
+	import Logo from '$lib/assets/nifty_friends_logo.png';
 	import NFT1 from '$lib/assets/example1.png';
 	import NFT2 from '$lib/assets/example2.png';
 	import NFT3 from '$lib/assets/example3.png';
@@ -18,7 +18,7 @@
 	let contract: Contract;
 
 	onMount(() => {
-		contract = new Contract('0x25Ca3D9871dd26683CE37275487Ee49309eeD9B2', ABI, $provider);
+		contract = new Contract('0x079D1091BB4b37Da98A3B326bFB0443F71F8aA9f', ABI, $provider);
 		contract.totalSupply().then((result: BigNumber) => {
 			minted = result.toString();
 		});
@@ -27,7 +27,7 @@
 	const mint = () => {
 		const amount = Math.floor(Number(buyAmount));
 		contract = new Contract(
-			'0x25Ca3D9871dd26683CE37275487Ee49309eeD9B2',
+			'0x079D1091BB4b37Da98A3B326bFB0443F71F8aA9f',
 			ABI,
 			// @ts-ignore
 			$provider.getSigner()
@@ -39,23 +39,23 @@
 <section
 	class="flex flex-col p-10 md:p-20 w-screen h-screen items-center gap-5 font-mono text-white mb-10 "
 >
-	<img src={Logo} alt="MetaCitizens" class="w-3/4 max-w-md" />
+	<img src={Logo} alt="NiftyFriends" class="w-3/4 max-w-md" />
 	<div class="flex flex-row flex-wrap max-w-90 items-center justify-center my-10">
 		<img
 			src={NFT1}
 			class="rounded-3xl drop-shadow-md h-60 transition transition-300 -rotate-6 hover:rotate-3 hover:scale-[1.05]"
-			alt="MetaCitizens"
+			alt="NiftyFriends"
 		/>
 		<img
 			src={NFT3}
 			class="rounded-3xl drop-shadow-md h-60 transition transition-300 rotate-12 hover:rotate-3 hover:scale-[1.05]"
-			alt="MetaCitizens"
+			alt="NiftyFriends"
 		/>
 	</div>
 	<div
 		class="flex flex-col outline outline-4 outline-[#227694] p-3 rounded-2xl items-center gap-2 text-center"
 	>
-		<h2 class="text-2xl font-semibold">Mint Your Meta Citizen</h2>
+		<h2 class="text-2xl font-semibold">Mint Your Nifty Friend</h2>
 		<h3 class="text-xl font-medium">{minted} / 10,000 Minted</h3>
 		<br />
 
@@ -94,8 +94,8 @@
 	</div>
 	<div class="font-regular text-xl my-16 flex flex-col gap-5 md:w-full max-w-screen-md">
 		<p>
-			Meta Citizens consists of 10,000 NFTs, a mixture of both male and female genders, residing on
-			the Ethereum Blockchain. Each Citizen is Unique in Appearance and Personality. The purpose of
+			Nifty Friends consists of 10,000 NFTs, a mixture of both male and female genders, residing on
+			the Ethereum Blockchain. Each friend is Unique in Appearance and Personality. The purpose of
 			project is to be a community-driven be a Free-to-Mint project with no gimmicks. The
 			development and direction of the project is decided upon by its community members with
 			guidance from the original creator, <a
@@ -107,10 +107,10 @@
 		<img
 			src={NFT2}
 			class="rounded-3xl drop-shadow-md h-80 transition transition-300 hover:rotate-3 hover:scale-[1.05] mx-auto"
-			alt="MetaCitizens"
+			alt="NiftyFriends"
 		/>
 		<p>
-			Owners of a Meta Citizens NFT have full IP rights to the character(s) they own. As the artist
+			Owners of a Nifty Friends NFT have full IP rights to the character(s) they own. As the artist
 			and creator of the project, I just ask that you do not engage in any malicious or illegal
 			behavior while utilizing the NFT as we would like to keep positive vibes around our community.
 		</p>
@@ -120,7 +120,10 @@
 		</p>
 	</div>
 	<footer class="flex flex-row gap-5 items-center align-center pb-20 font-semibold text-xl">
-		<a href="https://twitter.com/MetaCitizens" target="_blank" class="underline decoration-sky-500"
+		<a
+			href="https://twitter.com/NiftyFriendsNFT"
+			target="_blank"
+			class="underline decoration-sky-500"
 			><svg
 				aria-hidden="true"
 				focusable="false"
@@ -152,7 +155,7 @@
 				/></svg
 			>Discord</a
 		><a
-			href="https://opensea.io/collection/meta-citizens"
+			href="https://opensea.io/collection/niftyfriends"
 			target="_blank"
 			class="underline decoration-sky-500"
 		>
